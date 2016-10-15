@@ -1,5 +1,6 @@
 package com.example.pawan.complaintregistration;
 
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -72,6 +74,21 @@ public class AddDetails extends AppCompatActivity {
 
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type,street,colony,city,zipcode,phoneno,complaintdetails,image);
+        try{
+            ProgressDialog progress = new ProgressDialog(this);
+            progress.setMessage("Uploading :) ");
+            progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progress.setIndeterminate(true);
+            progress.show();
+            String result=backgroundWorker.execute(type,street,colony,city,zipcode,phoneno,complaintdetails,image).get();
+            Log.d("After query", "login() called with: " + result + "");
+            progress.cancel();
+        }
+        catch (java.lang.InterruptedException e){
+
+        }
+        catch (java.util.concurrent.ExecutionException e){
+gi
+        }
     }
 }

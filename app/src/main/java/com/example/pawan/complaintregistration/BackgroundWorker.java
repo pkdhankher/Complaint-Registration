@@ -3,6 +3,7 @@ package com.example.pawan.complaintregistration;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -24,6 +25,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
     Context context;
     AlertDialog alertDialog;
+    String TAG ="Backgroundworker";
     BackgroundWorker(Context ctx) {
         context = ctx;
     }
@@ -33,7 +35,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     {
 
         String type = params[0];
-        String logurl = "http://172.16.14.151/pp1.php";
+        String logurl = "http://10.0.2.2/dashboard/cr/pp1.php";
 
 
         if (type.equals("login"))
@@ -74,6 +76,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
+                Log.d(TAG, "doInBackground() called with: " + "result = [" + result + "]");
                 return result;
 
 
