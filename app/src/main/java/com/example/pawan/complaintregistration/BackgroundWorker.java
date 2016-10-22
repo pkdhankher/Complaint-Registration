@@ -33,10 +33,11 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     {
 
         String type = params[0];
-        String logurl = "http://172.16.14.151/pp1.php";
+        String inserturl = "http://172.16.14.118/pp1.php";
+        String geturl = "http://172.16.14.118/getdata.php";
 
 
-        if (type.equals("login"))
+        if (type.equals("insert"))
         {
             try {
                 String street = params[1];
@@ -46,7 +47,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 String phoneno = params[5];
                 String complaintdetails = params[6];
                 String image = params[7];
-                URL url = new URL(logurl);
+                URL url = new URL(inserturl);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoInput(true);
@@ -87,14 +88,61 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 e.printStackTrace();
             }
         }
+
+        else if (type.equals("getdata"))
+        {
+
+                try {
+                    String phone = params[1];
+
+                    URL url = new URL(geturl);
+                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                    httpURLConnection.setRequestMethod("POST");
+                    httpURLConnection.setDoInput(true);
+                    httpURLConnection.setDoOutput(true);
+                    OutputStream outputStream = httpURLConnection.getOutputStream();
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                    String postdata = URLEncoder.encode("phone", "UTF-8") + "=" + URLEncoder.encode(phone, "UTF-8");
+
+                    bufferedWriter.write(postdata);
+                    bufferedWriter.flush();
+                    bufferedWriter.close();
+                    outputStream.close();
+                    InputStream inputStream = httpURLConnection.getInputStream();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                    String result = "";
+                    String line = "";
+                    while ((line = bufferedReader.readLine()) != null) {
+                        result += line;
+                    }
+                    bufferedReader.close();
+                    inputStream.close();
+                    httpURLConnection.disconnect();
+                    return result;
+
+
+                }
+                catch (MalformedURLException e)
+                {
+                    e.printStackTrace();
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+
+
         return null;
 
     }
 
     @Override
     protected void onPreExecute() {
-        alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("login status");
+
+            alertDialog = new AlertDialog.Builder(context).create();
+            alertDialog.setTitle("login status");
+
     }
 
 

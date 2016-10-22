@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity {
     {
         String phone = e1.getText().toString();
 
-        String type = "data";
+        String type = "getdata";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type,phone);
 
