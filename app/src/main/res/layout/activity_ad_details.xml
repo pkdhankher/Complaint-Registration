@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.pawan.complaintregistration.login">
+    tools:context="com.example.pawan.complaintregistration.AdDetails">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_login" />
+    <include layout="@layout/content_ad_details" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

@@ -25,21 +25,25 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".Help"
             android:label="@string/title_activity_help"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".AddDetails"
-            android:label="@string/title_activity_add_details"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Login"
-            android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AdminLogin"
             android:label="@string/title_activity_admin_login"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AdDetails"
+            android:label="@string/title_activity_ad_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShowDetails"
+            android:label="@string/title_activity_show_details"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
