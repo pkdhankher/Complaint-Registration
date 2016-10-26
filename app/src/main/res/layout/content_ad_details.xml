@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_add_details"
+    android:id="@+id/content_ad_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,8 +10,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.pawan.complaintregistration.AddDetails"
-    tools:showIn="@layout/activity_add_details"
+    tools:context="com.example.pawan.complaintregistration.AdDetails"
+    tools:showIn="@layout/activity_ad_details"
     android:background="#fcf4c8">
 
     <LinearLayout
@@ -92,34 +92,45 @@
             <EditText
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/colony"
+                android:id="@+id/editText5"
                 android:layout_alignBottom="@+id/textView11"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/city"
-                android:layout_alignStart="@+id/city" />
+                android:layout_alignLeft="@+id/editText6"
+                android:layout_alignStart="@+id/editText6" />
 
             <EditText
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/city"
+                android:id="@+id/editText6"
                 android:layout_alignBaseline="@+id/textView12"
                 android:layout_alignBottom="@+id/textView12"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/street"
-                android:layout_alignStart="@+id/street" />
+                android:layout_alignLeft="@+id/editText4"
+                android:layout_alignStart="@+id/editText4" />
 
             <EditText
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/street"
+                android:id="@+id/editText4"
                 android:layout_above="@+id/textView11"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@+id/textView15"
                 android:layout_toRightOf="@+id/textView15" />
 
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/editText7"
+                android:layout_alignBaseline="@+id/textView13"
+                android:layout_alignBottom="@+id/textView13"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignLeft="@+id/editText6"
+                android:layout_alignStart="@+id/editText6" />
             <TextView
                 android:text="Zip Code"
                 android:layout_width="wrap_content"
@@ -137,24 +148,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:id="@+id/phone"
+                android:id="@+id/editText8"
                 android:layout_alignBaseline="@+id/textView14"
                 android:layout_alignBottom="@+id/textView14"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/zip"
-                android:layout_alignStart="@+id/zip" />
+                android:layout_alignLeft="@+id/editText7"
+                android:layout_alignStart="@+id/editText7" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:id="@+id/cd"
+                android:id="@+id/editText9"
                 android:layout_alignBottom="@+id/textView15"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/phone"
-                android:layout_alignStart="@+id/phone" />
+                android:layout_alignLeft="@+id/editText8"
+                android:layout_alignStart="@+id/editText8" />
 
             <TextView
                 android:text="Complaint Details :-"
@@ -185,18 +196,6 @@
                 android:paddingRight="20dp"
                 android:text="Submit"
                 android:layout_marginLeft="115dp" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:id="@+id/zip"
-                android:layout_alignBaseline="@+id/textView13"
-                android:layout_alignBottom="@+id/textView13"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/city"
-                android:layout_alignStart="@+id/city" />
 
 
         </RelativeLayout>
