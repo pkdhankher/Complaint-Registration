@@ -35,12 +35,12 @@ public class AdDetails extends AppCompatActivity {
 
 
 
-        e1 = (EditText) findViewById(R.id.editText4);
-        e2 = (EditText) findViewById(R.id.editText5);
-        e3 = (EditText) findViewById(R.id.editText6);
-        e4 = (EditText) findViewById(R.id.editText7);
-        e5 = (EditText) findViewById(R.id.editText8);
-        e6 = (EditText) findViewById(R.id.editText9);
+//        e1 = (EditText) findViewById(R.id.editText4);
+//        e2 = (EditText) findViewById(R.id.editText5);
+//        e3 = (EditText) findViewById(R.id.editText6);
+//        e4 = (EditText) findViewById(R.id.editText7);
+//        e5 = (EditText) findViewById(R.id.editText8);
+//        e6 = (EditText) findViewById(R.id.editText9);
          b =(Button) findViewById(R.id.submit);
         b.setOnClickListener(new View.OnClickListener() {
             @Override

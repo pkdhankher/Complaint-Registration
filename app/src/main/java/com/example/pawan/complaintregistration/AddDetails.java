@@ -31,7 +31,7 @@ public class AddDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_details);
+        setContentView(R.layout.activity_ad_details);
 
         e1 = (EditText) findViewById(R.id.street);
         e2 = (EditText) findViewById(R.id.colony);

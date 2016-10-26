@@ -11,16 +11,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-<<<<<<< HEAD
 import org.json.JSONObject;
 
-public class Login extends AppCompatActivity {
-    EditText e1;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class login extends AppCompatActivity {
+public class Login extends AppCompatActivity {
     EditText e1;
 
     @Override
@@ -41,7 +37,7 @@ public class login extends AppCompatActivity {
     {
         String phone = e1.getText().toString();
 
-        String type = "get";
+        String type = "data";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
 //        backgroundWorker.execute(type,phone);
 
@@ -57,13 +53,13 @@ public class login extends AppCompatActivity {
             Intent intent=new Intent(Login.this,ShowData.class);
             intent.putExtra("result",result);
             startActivity(intent);
-            JSONObject jsonObject = new JSONObject(result);
-            Log.d("abc", "login() called with: " +jsonObject.get("count")+ "");
-            for(int i=0;i<Integer.parseInt(jsonObject.get("count").toString());i++){
-                JSONObject inside=jsonObject.getJSONObject(String.valueOf(i));
-                Log.d("abc", inside.getString("street") + " " + inside.getString("colony") + " " + inside.getString("city") + " " + inside.getString("zipcode") + " " +
-                        inside.getString("phoneno") + " " + inside.getString("complaintdetails") + " " + inside.getString("id") + " " + inside.getString("image"));
-            }
+//            JSONObject jsonObject = new JSONObject(result);
+//            Log.d("abc", "login() called with: " +jsonObject.get("count")+ "");
+//            for(int i=0;i<Integer.parseInt(jsonObject.get("count").toString());i++){
+//                JSONObject inside=jsonObject.getJSONObject(String.valueOf(i));
+//                Log.d("abc", inside.getString("street") + " " + inside.getString("colony") + " " + inside.getString("city") + " " + inside.getString("zipcode") + " " +
+//                        inside.getString("phoneno") + " " + inside.getString("complaintdetails") + " " + inside.getString("id") + " " + inside.getString("image"));
+//            }
         }
         catch (java.lang.InterruptedException e){
             Log.d("exc", "login() called with: " + e +"");
@@ -73,10 +69,10 @@ public class login extends AppCompatActivity {
             Log.d("exc", "login() called with: " + e +"");
 
         }
-        catch (org.json.JSONException E){
-            Log.d("exc", "login() called with: " + E +"");
-
-        }
+//        catch (org.json.JSONException E){
+//            Log.d("exc", "login() called with: " + E +"");
+//
+//        }
 
     }
 

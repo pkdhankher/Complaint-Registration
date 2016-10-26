@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
             Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
 
-            Intent newactivity = new Intent(this, AdDetails.class);
+            Intent newactivity = new Intent(this, AddDetails.class);
             newactivity.putExtra("dhankher", imageBitmap);
             startActivity(newactivity);
 
@@ -48,12 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void clkLogin(View view){
-
-        startActivity(new Intent(this, login.class));
+        startActivity(new Intent(MainActivity.this, Login.class));
     }
     public void clkHelp(View view){
 
-        startActivity((new Intent(this, Help.class)));
+        startActivity((new Intent(MainActivity.this, Help.class)));
 
     }
 }
