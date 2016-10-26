@@ -35,11 +35,12 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     {
 
         String type = params[0];
-        String logurl = "http://10.0.2.2/dashboard/cr/pp1.php";
 
 
         if (type.equals("login"))
         {
+
+            String logurl = "http://10.0.2.2/dashboard/cr/pp1.php";
             try {
                 String street = params[1];
                 String colony = params[2];
@@ -62,6 +63,47 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 + URLEncoder.encode("phoneno", "UTF-8") + "=" + URLEncoder.encode(phoneno, "UTF-8") + "&"
                 + URLEncoder.encode("complaintdetails", "UTF-8") + "=" + URLEncoder.encode(complaintdetails, "UTF-8") + "&"
                 +URLEncoder.encode("image", "UTF-8") + "=" + URLEncoder.encode(image, "UTF-8");
+                bufferedWriter.write(postdata);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                String result = "";
+                String line = "";
+                while ((line = bufferedReader.readLine()) != null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                Log.d(TAG, "doInBackground() called with: " + "result = [" + result + "]");
+                return result;
+
+
+            }
+            catch (MalformedURLException e)
+            {
+                e.printStackTrace();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        else if(type.equals("data")){
+            try {
+
+                String logurl = "http://10.0.2.2/dashboard/cr/ret.php";
+                String phoneno = params[1];
+                URL url = new URL(logurl);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.setDoOutput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String postdata = URLEncoder.encode("phoneno", "UTF-8") + "=" + URLEncoder.encode(phoneno, "UTF-8") ;
                 bufferedWriter.write(postdata);
                 bufferedWriter.flush();
                 bufferedWriter.close();

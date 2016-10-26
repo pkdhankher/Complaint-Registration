@@ -10,8 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewDebug;
 import android.widget.Button;
 import android.widget.EditText;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -22,7 +26,7 @@ public class AddDetails extends AppCompatActivity {
     Button  b1;
     Bitmap img;
     byte[]  imageInByte;
-
+    String result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +62,7 @@ public class AddDetails extends AppCompatActivity {
 
         img = (Bitmap) getIntent().getExtras().get("dhankher");
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        img.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        img.compress(Bitmap.CompressFormat.PNG,100, stream);
         imageInByte = stream.toByteArray();
 
 
@@ -74,21 +78,54 @@ public class AddDetails extends AppCompatActivity {
 
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        String result;
         try{
-            ProgressDialog progress = new ProgressDialog(this);
-            progress.setMessage("Uploading :) ");
-            progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            progress.setIndeterminate(true);
-            progress.show();
-            String result=backgroundWorker.execute(type,street,colony,city,zipcode,phoneno,complaintdetails,image).get();
+
+            result=backgroundWorker.execute(type,street,colony,city,zipcode,phoneno,complaintdetails,image).get();
+
             Log.d("After query", "login() called with: " + result + "");
-            progress.cancel();
+//            JSONObject jsonObject = new JSONObject(result);
+//            Log.d("abc", "login() called with: " +jsonObject.get("count")+ "");
+//            for(int i=0;i<Integer.parseInt(jsonObject.get("count").toString());i++){
+//                JSONObject inside=jsonObject.getJSONObject(String.valueOf(i));
+//                Log.d("abc", inside.getString("street") + " " + inside.getString("colony") + " " + inside.getString("city") + " " + inside.getString("zipcode") + " " +
+//                        inside.getString("phoneno") + " " + inside.getString("complaintdetails") + " " + inside.getString("id") + " " + inside.getString("image"));
+//            }
         }
         catch (java.lang.InterruptedException e){
 
         }
         catch (java.util.concurrent.ExecutionException e){
-gi
+
         }
+//        catch (org.json.JSONException E){
+//
+//        }
+//        try{
+//            ProgressDialog progress = new ProgressDialog(this);
+//            progress.setMessage("Uploading :) ");
+//            progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+//            progress.setIndeterminate(true);
+//            progress.show();
+//            result=backgroundWorker.execute(type,street,colony,city,zipcode,phoneno,complaintdetails,image).get();
+//            progress.cancel();
+//            Log.d("After query", "login() called with: " + result + "");
+//            JSONObject jsonObject = new JSONObject(result);
+//            Log.d("abc", "login() called with: " +jsonObject.get("count")+ "");
+//            for(int i=0;i<Integer.parseInt(jsonObject.get("count").toString());i++){
+//                JSONObject inside=jsonObject.getJSONObject(String.valueOf(i));
+//                Log.d("abc", inside.getString("street") + " " + inside.getString("colony") + " " + inside.getString("city") + " " + inside.getString("zipcode") + " " +
+//                        inside.getString("phoneno") + " " + inside.getString("complaintdetails") + " " + inside.getString("id") + " " + inside.getString("image"));
+//            }
+//        }
+//        catch (java.lang.InterruptedException e){
+//
+//        }
+//        catch (java.util.concurrent.ExecutionException e){
+//
+//        }
+//        catch (org.json.JSONException E){
+//
+//        }
     }
 }

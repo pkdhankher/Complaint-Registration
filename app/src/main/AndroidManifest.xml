@@ -40,6 +40,9 @@
             android:name=".AdminLogin"
             android:label="@string/title_activity_admin_login"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShowData" />
+
     </application>
 
 </manifest>
