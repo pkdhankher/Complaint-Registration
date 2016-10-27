@@ -44,7 +44,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
         if (type.equals("login"))
         {
-            String logurl = "http://10.0.2.2/dashboard/cr/pp1.php";
+            String logurl = "http://172.16.14.118/pp1.php";
 //        String logurl = "http://172.16.14.118/pp1.php";
 //        String geturl = "http://172.16.14.118/demo1.php";
 
@@ -141,8 +141,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         else if(type.equals("data")){
             try {
 
-                String logurl = "http://10.0.2.2/dashboard/cr/ret.php";
-                String phoneno = params[1];
+                String logurl = "http://172.16.14.118/demo1.php";
+                String phone = params[1];
                 URL url = new URL(logurl);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -150,7 +150,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 httpURLConnection.setDoOutput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String postdata = URLEncoder.encode("phoneno", "UTF-8") + "=" + URLEncoder.encode(phoneno, "UTF-8") ;
+                String postdata = URLEncoder.encode("phone", "UTF-8") + "=" + URLEncoder.encode(phone, "UTF-8") ;
                 bufferedWriter.write(postdata);
                 bufferedWriter.flush();
                 bufferedWriter.close();

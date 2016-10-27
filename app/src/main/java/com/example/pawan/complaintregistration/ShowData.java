@@ -102,6 +102,7 @@ public class ShowData extends AppCompatActivity {
 //    }
 
     private void parseResult(String result) {
+        Log.d(TAG, "parseResult() called with: result = [" + result + "]");
         try {
             JSONObject jsonObject = new JSONObject(result);
             feedsList = new ArrayList<>();
@@ -110,9 +111,10 @@ public class ShowData extends AppCompatActivity {
                 JSONObject inside=jsonObject.getJSONObject(String.valueOf(i));
                 FeedItem item = new FeedItem();
                 Log.d("abc", inside.getString("street") + " " + inside.getString("colony") + " " + inside.getString("city") + " " + inside.getString("zipcode") + " " +
-                        inside.getString("phoneno") + " " + inside.getString("complaintdetails") + " " + inside.getString("id") + " " + inside.getString("image"));
+                        inside.getString("phoneno") + " " + inside.getString("complaintdetails")  + " " + inside.getString("image"));
                 String title = inside.getString("street") + ", " + inside.getString("colony") + ", " + inside.getString("city") + ", " + inside.getString("zipcode");
                 item.setTitle(title);
+                Log.d(TAG, "parseResult() called with: result = [" + inside.getString("image") + "]");
                 item.setThumbnail(inside.getString("image"));
                 feedsList.add(item);
             }

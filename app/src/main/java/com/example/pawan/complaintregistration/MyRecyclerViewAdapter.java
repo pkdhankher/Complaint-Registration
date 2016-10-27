@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         //Render image using Picasso library
         if (!TextUtils.isEmpty(feedItem.getThumbnail())) {
+            Log.d("testing", "onBindViewHolder() called with: customViewHolder = [" + feedItem.getThumbnail() + "], i = [" + i + "]");
                 String image=feedItem.getThumbnail();
             byte[] bitmapdata =Base64.decode(image,Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
