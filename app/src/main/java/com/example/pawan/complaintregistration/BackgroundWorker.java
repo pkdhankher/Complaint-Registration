@@ -45,8 +45,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         if (type.equals("login"))
         {
             String logurl = "http://172.16.14.118/pp1.php";
-//        String logurl = "http://172.16.14.118/pp1.php";
-//        String geturl = "http://172.16.14.118/demo1.php";
+            //String logurl="http://10.0.2.2/dashboard/cr/pp1.php"; //for my pc -Rahul
 
             try {
                 String street = params[1];
@@ -142,6 +141,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             try {
 
                 String logurl = "http://172.16.14.118/demo1.php";
+                //String logurl = "http://10.0.2.2/dashboard/cr/ret.php";  //for my pc -Rahul
                 String phone = params[1];
                 URL url = new URL(logurl);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -188,16 +188,16 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected void onPreExecute() {
 
-        alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("login status");
+//        alertDialog = new AlertDialog.Builder(context).create();
+//        alertDialog.setTitle("login status");
 
     }
 
 
     @Override
     protected void onPostExecute(String result) {
-        alertDialog.setMessage(result);
-        alertDialog.show();
+//        alertDialog.setMessage(result);
+//        alertDialog.show();
     }
     @Override
     protected void onProgressUpdate(Void... values)
