@@ -48,10 +48,10 @@ public class Login extends AppCompatActivity {
             progress.setIndeterminate(true);
             progress.show();
             String result=backgroundWorker.execute(type,phone).get();
-            progress.cancel();
             Log.d("After query", "login() called with: " + result + "");
             Intent intent=new Intent(Login.this,ShowData.class);
             intent.putExtra("result",result);
+            progress.cancel();
             startActivity(intent);
 //            JSONObject jsonObject = new JSONObject(result);
 //            Log.d("abc", "login() called with: " +jsonObject.get("count")+ "");

@@ -1,6 +1,7 @@
 package com.example.pawan.complaintregistration;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -79,11 +81,12 @@ public class AddDetails extends AppCompatActivity {
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         String result;
-        try{
 
-            result=backgroundWorker.execute(type,street,colony,city,zipcode,phoneno,complaintdetails,image).get();
+            backgroundWorker.execute(type,street,colony,city,zipcode,phoneno,complaintdetails,image);
+        Toast.makeText(AddDetails.this,"Complaint Added",Toast.LENGTH_LONG).show();
+        finish();
 
-            Log.d("After query", "login() called with: " + result + "");
+            //Log.d("After query", "login() called with: " + result + "");
 //            JSONObject jsonObject = new JSONObject(result);
 //            Log.d("abc", "login() called with: " +jsonObject.get("count")+ "");
 //            for(int i=0;i<Integer.parseInt(jsonObject.get("count").toString());i++){
@@ -91,13 +94,7 @@ public class AddDetails extends AppCompatActivity {
 //                Log.d("abc", inside.getString("street") + " " + inside.getString("colony") + " " + inside.getString("city") + " " + inside.getString("zipcode") + " " +
 //                        inside.getString("phoneno") + " " + inside.getString("complaintdetails") + " " + inside.getString("id") + " " + inside.getString("image"));
 //            }
-        }
-        catch (java.lang.InterruptedException e){
 
-        }
-        catch (java.util.concurrent.ExecutionException e){
-
-        }
 //        catch (org.json.JSONException E){
 //
 //        }
