@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     int check = 0;
     Uri filePath;
     int me = 0;
+    String TAG="MainACtivity";
 
     public MainActivity() throws ExecutionException, InterruptedException {
     }
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        check=0;
 
 
         spinner = (Spinner) findViewById(R.id.spinner);
@@ -50,8 +52,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 check = check + 1;
+                Log.d(TAG, "oncheckincrement() called with: " + "parent = [" + check + "], view = [" + view + "], position = [" + position + "], id = [" + id + "]");
                 if (check > 1) {
                     spresult = parent.getItemAtPosition(position).toString();
+                    Log.d(TAG, "onItemSelected() called with: " + "parent = [" + parent + "], view = [" + view + "], position = [" + position + "], id = [" + id + "]");
                     login();
                 }
             }
@@ -70,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void selectPic() {
+    public void selectPic(View view) {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
