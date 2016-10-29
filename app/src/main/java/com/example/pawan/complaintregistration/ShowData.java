@@ -112,7 +112,7 @@ public class ShowData extends AppCompatActivity {
                 FeedItem item = new FeedItem();
                 Log.d("abc", inside.getString("street") + " " + inside.getString("colony") + " " + inside.getString("city") + " " + inside.getString("zipcode") + " " +
                         inside.getString("phoneno") + " " + inside.getString("complaintdetails")  + " " + inside.getString("image"));
-                String title = inside.getString("street") + ", " + inside.getString("colony") + ", " + inside.getString("city") + ", " + inside.getString("zipcode");
+                String title = "Street:-" + inside.getString("street") + ", " + "Colony:-"+ inside.getString("colony") + ", " + "City:-" + inside.getString("city") + ", " + "ZipCode:-" + inside.getString("zipcode")+ ", " +  ", " + "ComplaintDetails:-" + inside.getString("complaintdetails");
                 item.setTitle(title);
                 Log.d(TAG, "parseResult() called with: result = [" + inside.getString("image") + "]");
                 item.setThumbnail(inside.getString("image"));
