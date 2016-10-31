@@ -103,11 +103,13 @@ public class MainActivity extends AppCompatActivity {
 
                 filePath = data.getData();
                 try {
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap (getContentResolver(), filePath) ;
 
-                    //     Intent newactivity = new Intent(this, AddDetails.class);
-                    //    newactivity.putExtra("dhankher", bitmap);
-                    //     startActivity(newactivity);
+
+
+                    Intent newactivity = new Intent(this, AddDetails.class);
+                        newactivity.putExtra("dhankher", bitmap);
+                         startActivity(newactivity);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -115,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
 
 
 

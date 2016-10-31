@@ -38,5 +38,6 @@
 </string>
     <string name="title_activity_ad_details">AdDetails</string>
     <string name="title_activity_show_details">ShowDetails</string>
+    <string name="title_activity_update_complaints">UpdateComplaints</string>
 
 </resources>
