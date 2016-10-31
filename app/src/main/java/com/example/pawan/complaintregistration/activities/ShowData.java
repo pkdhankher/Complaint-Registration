@@ -1,5 +1,6 @@
 package com.example.pawan.complaintregistration.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +23,7 @@ import java.util.List;
 /**
  * Created by rahul on 26/10/16.
  */
-public class ShowData extends AppCompatActivity {
+public class ShowData extends Activity {
     private static final String TAG = "RecyclerViewExample";
     private List<FeedItem> feedsList;
     private RecyclerView mRecyclerView;

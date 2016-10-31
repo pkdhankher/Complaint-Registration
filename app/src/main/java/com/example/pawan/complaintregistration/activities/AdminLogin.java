@@ -1,5 +1,6 @@
 package com.example.pawan.complaintregistration.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,7 @@ import android.widget.Toast;
 import com.example.pawan.complaintregistration.R;
 import com.example.pawan.complaintregistration.UpdateComplaints;
 
-public class AdminLogin extends AppCompatActivity {
+public class AdminLogin extends Activity {
     EditText e1;
     EditText e2;
 

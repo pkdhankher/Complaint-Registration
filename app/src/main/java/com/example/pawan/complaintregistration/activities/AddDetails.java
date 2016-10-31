@@ -1,5 +1,6 @@
 package com.example.pawan.complaintregistration.activities;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import com.example.pawan.complaintregistration.workers.BackgroundWorker;
 
 import java.io.ByteArrayOutputStream;
 
-public class AddDetails extends AppCompatActivity {
+public class AddDetails extends Activity {
     EditText e1, e2, e3, e4, e5, e6;
     Button b1;
     Bitmap img;

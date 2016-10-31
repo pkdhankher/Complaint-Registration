@@ -1,5 +1,6 @@
 package com.example.pawan.complaintregistration.activities;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -22,7 +23,7 @@ import com.example.pawan.complaintregistration.workers.BackgroundWorker;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 0;
     private static final int REQUEST_PICK_IMAGE = 1;

@@ -1,5 +1,6 @@
 package com.example.pawan.complaintregistration.activities;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import com.example.pawan.complaintregistration.R;
 
 import java.io.ByteArrayOutputStream;
 
-public class AdDetails extends AppCompatActivity {
+public class AdDetails extends Activity {
     EditText e1,e2,e3,e4,e5,e6;
     Bitmap img;
     byte[]  imageInByte;

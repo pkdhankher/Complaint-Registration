@@ -4,10 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fcf4c8"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/textView"
@@ -20,6 +17,7 @@
         android:onClick="clkLogin"
         android:text="Login"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -32,6 +30,7 @@
         android:layout_below="@+id/textView"
         android:layout_marginTop="61dp"
         android:text="Report Your Complaint :-"
+        android:textColor="#000"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold" />
 
@@ -97,6 +96,7 @@
         android:layout_below="@+id/selectpic"
         android:layout_marginTop="70dp"
         android:text="Select City :-"
+        android:textColor="#000"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold" />
 
