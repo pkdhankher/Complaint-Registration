@@ -5,33 +5,40 @@
     android:id="@+id/content_help"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:paddingLeft="10dp"
-    android:paddingRight="10dp"
+    android:background="#fcf4c8"
+    android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.pawan.complaintregistration.Help"
-    tools:showIn="@layout/activity_help"
-    android:background="#fcf4c8">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:showIn="@layout/activity_help">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="How This App Works :-"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:id="@+id/main"
-        android:layout_marginTop="5dp"
-        android:textColor="?attr/editTextColor" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="?attr/editTextColor"
-        android:id="@+id/step1"
-        android:text="@string/large_text"
-        android:textSize="20dp"/>
-</LinearLayout>
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="How it works"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#777" />
+
+        <TextView
+            android:id="@+id/step1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="@string/large_text"
+            android:textColor="#222"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 </ScrollView>

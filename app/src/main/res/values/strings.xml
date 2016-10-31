@@ -32,9 +32,8 @@
     <string name="title_activity_help">Help</string>
     <string name="title_activity_admin_login">AdminLogin</string>
     -<string name="large_text">
-    \n\n
     "This App deals with general problems faced by people like Seawage problems, Garbage, Dump, Damaged Roads etc"\n\n
-    <b>Step 1. :- Take Picture</b>\n\n "Click on The Take Picture Button to capture Image Of your Problem."
+    <b>Step 1 : Take Picture</b>\n\n"Click on The Take Picture Button to capture image Of your problem."
 </string>
     <string name="title_activity_ad_details">AdDetails</string>
     <string name="title_activity_show_details">ShowDetails</string>

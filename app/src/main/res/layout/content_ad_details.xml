@@ -5,200 +5,159 @@
     android:id="@+id/content_add_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#fcf4c8"
+    android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.pawan.complaintregistration.AddDetails"
-    tools:showIn="@layout/activity_ad_details"
-    android:background="#fcf4c8">
+    tools:showIn="@layout/activity_ad_details">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="625dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/textView9"
             android:layout_width="match_parent"
-            android:layout_height="620dp">
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="Fill following feilds"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Fill Your Add Details :-"
-                android:id="@+id/textView9"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Street"
+            android:textColor="#000"
+            android:textSize="18sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Street :-"
-                android:id="@+id/textView10"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_below="@+id/textView9"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="57dp" />
+        <EditText
+            android:id="@+id/street"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/et_rounded_corner"
+            android:hint="Street"
+            android:padding="5dp"
+            android:textColor="#000" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Colony :-"
-                android:id="@+id/textView11"
-                android:layout_below="@+id/textView10"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="47dp" />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Colony "
+            android:textColor="#000"
+            android:textSize="18sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="City :-"
-                android:id="@+id/textView12"
-                android:layout_below="@+id/textView11"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="47dp" />
+        <EditText
+            android:id="@+id/colony"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/et_rounded_corner"
+            android:hint="Colony"
+            android:padding="5dp"
+            android:textColor="#000" />
 
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="City "
+            android:textColor="#000"
+            android:textSize="18sp" />
 
-
-            <TextView
-                android:text="Phone No."
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:id="@+id/textView14"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@id/textView12"
-                android:layout_marginTop="110dp"
-                android:textColor="?attr/editTextColor" />
-
-            <EditText
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/colony"
-                android:layout_alignBottom="@+id/textView11"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/city"
-                android:layout_alignStart="@+id/city" />
-
-            <EditText
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/city"
-                android:layout_alignBaseline="@+id/textView12"
-                android:layout_alignBottom="@+id/textView12"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/street"
-                android:layout_alignStart="@+id/street" />
-
-            <EditText
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/street"
-                android:layout_above="@+id/textView11"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@+id/textView15"
-                android:layout_toRightOf="@+id/textView15" />
-
-            <TextView
-                android:text="Zip Code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:id="@+id/textView13"
-                android:textColor="?attr/editTextColor"
-                android:layout_below="@+id/textView12"
-                android:layout_marginTop="47dp"
-                android:layout_alignRight="@+id/textView11"
-                android:layout_alignEnd="@+id/textView11" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:id="@+id/phone"
-                android:layout_alignBaseline="@+id/textView14"
-                android:layout_alignBottom="@+id/textView14"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/zip"
-                android:layout_alignStart="@+id/zip" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:id="@+id/cd"
-                android:layout_alignBottom="@+id/textView15"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/phone"
-                android:layout_alignStart="@+id/phone" />
-
-            <TextView
-                android:text="Complaint Details :-"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:id="@+id/textView15"
-                android:textColor="?attr/editTextColor"
-                android:layout_marginTop="47dp"
-                android:layout_below="@+id/textView14"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/et_rounded_corner"
+            android:hint="City"
+            android:padding="5dp"
+            android:textColor="#000" />
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textView15"
-                android:layout_marginTop="57dp"
-                android:id="@+id/submit"
-                android:textSize="25dp"
-                android:textColor="#ffffff"
-                android:background="#e59950"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:text="Submit"
-                android:layout_marginLeft="115dp" />
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Phone No."
+            android:textColor="#000"
+            android:textSize="18sp" />
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:id="@+id/zip"
-                android:layout_alignBaseline="@+id/textView13"
-                android:layout_alignBottom="@+id/textView13"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/city"
-                android:layout_alignStart="@+id/city" />
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/et_rounded_corner"
+            android:hint="Phone"
+            android:padding="5dp"
+            android:textColor="#000" />
 
 
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Zip Code"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/et_rounded_corner"
+            android:hint="Zip code"
+            android:padding="5dp"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Complaint Details "
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/cd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/et_rounded_corner"
+            android:gravity="left|top"
+            android:hint="Complaint details"
+            android:minHeight="70dp"
+            android:padding="5dp"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#e59950"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Submit"
+            android:textColor="#ffffff"
+            android:textSize="25dp" />
+
+
     </LinearLayout>
 </ScrollView>
