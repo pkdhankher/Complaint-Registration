@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.pawan.complaintregistration.AdminLogin"
+    tools:context="com.example.pawan.complaintregistration.activities.AdminLogin"
     tools:showIn="@layout/activity_admin_login">
 
     <TextView

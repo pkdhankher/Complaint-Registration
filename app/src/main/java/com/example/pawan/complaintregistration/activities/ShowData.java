@@ -1,7 +1,6 @@
-package com.example.pawan.complaintregistration;
+package com.example.pawan.complaintregistration.activities;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,16 +8,14 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import org.json.JSONArray;
+import com.example.pawan.complaintregistration.adapters.RecyclerViewAdapter;
+import com.example.pawan.complaintregistration.R;
+import com.example.pawan.complaintregistration.models.FeedItem;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +26,7 @@ public class ShowData extends AppCompatActivity {
     private static final String TAG = "RecyclerViewExample";
     private List<FeedItem> feedsList;
     private RecyclerView mRecyclerView;
-    private MyRecyclerViewAdapter adapter;
+    private RecyclerViewAdapter adapter;
     private ProgressBar progressBar;
 
     @Override
@@ -45,7 +42,7 @@ public class ShowData extends AppCompatActivity {
         Intent intent = getIntent();
         String result = intent.getStringExtra("result");
         parseResult(result);
-        adapter = new MyRecyclerViewAdapter(ShowData.this, feedsList);
+        adapter = new RecyclerViewAdapter(ShowData.this, feedsList);
         mRecyclerView.setAdapter(adapter);
         progressBar.setVisibility(View.GONE);
 //
@@ -93,7 +90,7 @@ public class ShowData extends AppCompatActivity {
 //            progressBar.setVisibility(View.GONE);
 //
 //            if (result == 1) {
-//                adapter = new MyRecyclerViewAdapter(MainActivity.this, feedsList);
+//                adapter = new RecyclerViewAdapter(MainActivity.this, feedsList);
 //                mRecyclerView.setAdapter(adapter);
 //            } else {
 //                Toast.makeText(MainActivity.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();

@@ -1,4 +1,4 @@
-package com.example.pawan.complaintregistration;
+package com.example.pawan.complaintregistration.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -6,18 +6,16 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+
+import com.example.pawan.complaintregistration.R;
+import com.example.pawan.complaintregistration.workers.BackgroundWorker;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -33,15 +31,16 @@ public class MainActivity extends AppCompatActivity {
     int check = 0;
     Uri filePath;
     int me = 0;
-    String TAG="MainACtivity";
+    String TAG = "MainACtivity";
 
     public MainActivity() throws ExecutionException, InterruptedException {
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        check=0;
+        check = 0;
 
 
         spinner = (Spinner) findViewById(R.id.spinner);
@@ -83,74 +82,65 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data ) {
-        me = me + 1;
-        if (me == 1) {
-            if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-                Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
+            Intent newactivity = new Intent(this, AddDetails.class);
+            newactivity.putExtra("dhankher", imageBitmap);
+            startActivity(newactivity);
+        }
 
-                Intent newactivity = new Intent(this, AddDetails.class);
-                newactivity.putExtra("dhankher", imageBitmap);
-                startActivity(newactivity);
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
 
-            }
+            filePath = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
 
-        } else if (me > 1) {
+                //     Intent newactivity = new Intent(this, AddDetails.class);
+                //    newactivity.putExtra("dhankher", bitmap);
+                //     startActivity(newactivity);
 
-            super.onActivityResult(requestCode, resultCode, data);
-            if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-
-                filePath = data.getData();
-                try {
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-
-                    //     Intent newactivity = new Intent(this, AddDetails.class);
-                    //    newactivity.putExtra("dhankher", bitmap);
-                    //     startActivity(newactivity);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
+
     }
 
 
-
-    public void clkLogin(View view){
+    public void clkLogin(View view) {
         startActivity(new Intent(MainActivity.this, Login.class));
     }
-    public void clkHelp(View view){
+
+    public void clkHelp(View view) {
 
         startActivity((new Intent(MainActivity.this, Help.class)));
 
     }
 
-    public void login()
-    {
+    public void login() {
 
         String type = "city";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        try{
+        try {
             ProgressDialog progress = new ProgressDialog(this);
             progress.setMessage("Getting Data : ");
             progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
             progress.setIndeterminate(true);
             progress.show();
-            String result = backgroundWorker.execute(type,spresult).get();
+            String result = backgroundWorker.execute(type, spresult).get();
             progress.cancel();
             Log.d("After query", "login() called with: " + result + "");
-            Intent intent=new Intent(this,ShowData.class);
-            intent.putExtra("result",result);
+            Intent intent = new Intent(this, ShowData.class);
+            intent.putExtra("result", result);
             startActivity(intent);
-        }
-        catch (java.lang.InterruptedException e){
-            Log.d("exc", "login() called with: " + e +"");
+        } catch (java.lang.InterruptedException e) {
+            Log.d("exc", "login() called with: " + e + "");
 
-        }
-        catch (java.util.concurrent.ExecutionException e){
-            Log.d("exc", "login() called with: " + e +"");
+        } catch (java.util.concurrent.ExecutionException e) {
+            Log.d("exc", "login() called with: " + e + "");
 
         }
 

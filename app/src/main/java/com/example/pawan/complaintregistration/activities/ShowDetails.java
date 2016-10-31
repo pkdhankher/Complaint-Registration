@@ -1,4 +1,4 @@
-package com.example.pawan.complaintregistration;
+package com.example.pawan.complaintregistration.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import com.example.pawan.complaintregistration.R;
 
 public class ShowDetails extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.pawan.complaintregistration;
+package com.example.pawan.complaintregistration.adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,16 +14,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.pawan.complaintregistration.R;
+import com.example.pawan.complaintregistration.models.FeedItem;
+
 import java.util.List;
 
 /**
  * Created by rahul on 26/10/16.
  */
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.CustomViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.CustomViewHolder> {
     private List<FeedItem> feedItemList;
     private Context mContext;
 
-    public MyRecyclerViewAdapter(Context context, List<FeedItem> feedItemList) {
+    public RecyclerViewAdapter(Context context, List<FeedItem> feedItemList) {
         this.feedItemList = feedItemList;
         this.mContext = context;
     }

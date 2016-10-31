@@ -8,7 +8,7 @@
     android:background="#fcf4c8"
     android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.pawan.complaintregistration.Help"
+    tools:context="com.example.pawan.complaintregistration.activities.Help"
     tools:showIn="@layout/activity_help">
 
     <LinearLayout

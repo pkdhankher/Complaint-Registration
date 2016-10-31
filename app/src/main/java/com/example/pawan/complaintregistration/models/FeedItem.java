@@ -1,4 +1,4 @@
-package com.example.pawan.complaintregistration;
+package com.example.pawan.complaintregistration.models;
 
 /**
  * Created by rahul on 26/10/16.

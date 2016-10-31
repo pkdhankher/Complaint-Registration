@@ -1,4 +1,4 @@
-package com.example.pawan.complaintregistration;
+package com.example.pawan.complaintregistration.workers;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -32,7 +32,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     Context context;
     AlertDialog alertDialog;
     String TAG ="Backgroundworker";
-    BackgroundWorker(Context ctx) {
+    public BackgroundWorker(Context ctx) {
         context = ctx;
     }
 
