@@ -13,7 +13,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.example.pawan.complaintregistration.BitmapDetails;
 import com.example.pawan.complaintregistration.R;
 import com.example.pawan.complaintregistration.workers.BackgroundWorker;
 
@@ -22,15 +24,13 @@ import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int REQUEST_IMAGE_CAPTURE = 1;
-    private int PICK_IMAGE_REQUEST = 1;
+    private static final int REQUEST_IMAGE_CAPTURE = 0;
+    private static final int REQUEST_PICK_IMAGE = 1;
     ImageButton imgbtn;
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
     String spresult;
     int check = 0;
-    Uri filePath;
-    int me = 0;
     String TAG = "MainACtivity";
 
     public MainActivity() throws ExecutionException, InterruptedException {
@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePicture.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePicture, REQUEST_IMAGE_CAPTURE);
+        } else {
+            Toast.makeText(this, "Camra not found", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -77,34 +79,40 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_PICK_IMAGE);
     }
 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        Bitmap imageBitmap = null;
 
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
-            Intent newactivity = new Intent(this, AddDetails.class);
-            newactivity.putExtra("dhankher", imageBitmap);
-            startActivity(newactivity);
-        }
+        if (data != null && resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case REQUEST_IMAGE_CAPTURE:
+                    imageBitmap = (Bitmap) data.getExtras().get("data");
+                    break;
 
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-
-            filePath = data.getData();
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                Intent newactivity = new Intent(this, AddDetails.class);
-                newactivity.putExtra("dhankher", bitmap);
-                startActivity(newactivity);
-            } catch (IOException e) {
-                e.printStackTrace();
+                case REQUEST_PICK_IMAGE:
+                    try {
+                        Uri filePath = data.getData();
+                        imageBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                    } catch (IOException e) {
+                        imageBitmap = null;
+                        e.printStackTrace();
+                    }
+                    break;
             }
-        }
 
+        }
+        BitmapDetails.setBitmap(imageBitmap);
+
+        if (BitmapDetails.getBitmap() != null) {
+            Intent newactivity = new Intent(this, AddDetails.class);
+            startActivity(newactivity);
+        } else {
+            Toast.makeText(MainActivity.this, "Something went Wrong, Try again!", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

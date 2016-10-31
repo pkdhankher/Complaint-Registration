@@ -9,16 +9,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.pawan.complaintregistration.workers.BackgroundWorker;
+import com.example.pawan.complaintregistration.BitmapDetails;
 import com.example.pawan.complaintregistration.R;
+import com.example.pawan.complaintregistration.workers.BackgroundWorker;
 
 import java.io.ByteArrayOutputStream;
 
 public class AddDetails extends AppCompatActivity {
-    EditText e1,e2,e3,e4,e5,e6;
-    Button  b1;
+    EditText e1, e2, e3, e4, e5, e6;
+    Button b1;
     Bitmap img;
-    byte[]  imageInByte;
+    byte[] imageInByte;
     String result;
 
     @Override
@@ -35,15 +36,16 @@ public class AddDetails extends AppCompatActivity {
         b1 = (Button) findViewById(R.id.submit);
 
 
-
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login();
             }
         });
+        img = BitmapDetails.getBitmap();
     }
-    public void login(){
+
+    public void login() {
         String street = e1.getText().toString();
         String colony = e2.getText().toString();
         String city = e3.getText().toString();
@@ -51,11 +53,10 @@ public class AddDetails extends AppCompatActivity {
         String phoneno = e5.getText().toString();
         String complaintdetails = e6.getText().toString();
 
-    // try {
+        // try {
 
-        img = (Bitmap) getIntent().getExtras().get("dhankher");
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        img.compress(Bitmap.CompressFormat.PNG,100, stream);
+        img.compress(Bitmap.CompressFormat.PNG, 100, stream);
         imageInByte = stream.toByteArray();
 
 
@@ -65,7 +66,7 @@ public class AddDetails extends AppCompatActivity {
         catch (IOException e) {
             e.printStackTrace();
       } */
-       // String image = Base64.encodeToString(imageInByte, Base64.NO_WRAP);
+        // String image = Base64.encodeToString(imageInByte, Base64.NO_WRAP);
         String image = Base64.encodeToString(imageInByte, Base64.DEFAULT);
 
 
@@ -73,11 +74,11 @@ public class AddDetails extends AppCompatActivity {
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         String result;
 
-            backgroundWorker.execute(type,street,colony,city,zipcode,phoneno,complaintdetails,image);
-        Toast.makeText(AddDetails.this,"Complaint Added",Toast.LENGTH_LONG).show();
+        backgroundWorker.execute(type, street, colony, city, zipcode, phoneno, complaintdetails, image);
+        Toast.makeText(AddDetails.this, "Complaint Added", Toast.LENGTH_LONG).show();
         finish();
 
-            //Log.d("After query", "login() called with: " + result + "");
+        //Log.d("After query", "login() called with: " + result + "");
 //            JSONObject jsonObject = new JSONObject(result);
 //            Log.d("abc", "login() called with: " +jsonObject.get("count")+ "");
 //            for(int i=0;i<Integer.parseInt(jsonObject.get("count").toString());i++){
