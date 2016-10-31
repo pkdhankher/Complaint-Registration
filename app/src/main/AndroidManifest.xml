@@ -44,8 +44,11 @@
             android:name=".activities.AddDetails"
             android:label="@string/title_activity_ad_details"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.ShowData" />
         <activity
-            android:name=".activities.ShowData" />
+            android:name=".UpdateComplaints"
+            android:label="@string/title_activity_update_complaints"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

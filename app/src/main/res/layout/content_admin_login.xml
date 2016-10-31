@@ -55,12 +55,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView8"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="right"
         android:layout_margin="5dp"
+        android:layout_marginTop="66dp"
         android:background="#e59950"
+        android:gravity="center"
+        android:onClick="onclick"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Login"
-        android:textColor="#ffffff"
-        android:textSize="18sp" />
+        android:textColor="#fff" />
 </LinearLayout>

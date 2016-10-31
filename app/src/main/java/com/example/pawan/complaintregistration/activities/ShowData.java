@@ -108,8 +108,8 @@ public class ShowData extends AppCompatActivity {
                 JSONObject inside=jsonObject.getJSONObject(String.valueOf(i));
                 FeedItem item = new FeedItem();
                 Log.d("abc", inside.getString("street") + " " + inside.getString("colony") + " " + inside.getString("city") + " " + inside.getString("zipcode") + " " +
-                        inside.getString("phoneno") + " " + inside.getString("complaintdetails")  + " " + inside.getString("image"));
-                String title = "Street:-" + inside.getString("street") + ", " + "Colony:-"+ inside.getString("colony") + ", " + "City:-" + inside.getString("city") + ", " + "ZipCode:-" + inside.getString("zipcode")+ ", " +  ", " + "ComplaintDetails:-" + inside.getString("complaintdetails");
+                        inside.getString("phoneno") + " " + inside.getString("complaintdetails")  + " "+ inside.getString("status")  + " " + inside.getString("image"));
+                String title =  "Phone:-" + inside.getString("phoneno") + ", " + "ComplaintDetails:-" + inside.getString("complaintdetails")+", " + "Complaint Status:-" + inside.getString("status");
                 item.setTitle(title);
                 Log.d(TAG, "parseResult() called with: result = [" + inside.getString("image") + "]");
                 item.setThumbnail(inside.getString("image"));
