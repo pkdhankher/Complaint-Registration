@@ -91,6 +91,7 @@
         android:focusableInTouchMode="false"
         android:minHeight="50dp"
         android:spinnerMode="dropdown"
+        android:gravity="center_horizontal"
         android:touchscreenBlocksFocus="true" />
 
     <TextView

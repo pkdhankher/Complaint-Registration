@@ -1,5 +1,6 @@
 package com.example.pawan.complaintregistration.activities;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.Toast;
 import com.example.pawan.complaintregistration.R;
 import com.example.pawan.complaintregistration.workers.BackgroundWorker;
 
-public class UpdateComplaints extends AppCompatActivity {
+public class UpdateComplaints extends Activity {
     EditText e1;
     Button b1;
 

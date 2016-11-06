@@ -38,7 +38,7 @@
         <activity android:name=".activities.ShowData" />
         <activity
             android:name=".activities.UpdateComplaints"
-            android:label="@string/title_activity_update_complaints" />
+            android:label="@string/title_activity_update_complaints"/>
     </application>
 
 </manifest>

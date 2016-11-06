@@ -45,9 +45,15 @@ public class MainActivity extends Activity {
 
 
         spinner = (Spinner) findViewById(R.id.spinner);
-        adapter = ArrayAdapter.createFromResource(this, R.array.city_arrays, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        String [] array =getResources().getStringArray(R.array.city_arrays);
+        adapter= new ArrayAdapter<CharSequence>(this,R.layout.spinner_layout,array);
+        adapter.setDropDownViewResource (android.R.layout.simple_dropdown_item_1line);
+        spinner.setAdapter (adapter);
+
+        //spinner = (Spinner) findViewById(R.id.spinner);
+        //adapter = ArrayAdapter.createFromResource(this, R.array.city_arrays, android.R.layout.simple_spinner_item);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
