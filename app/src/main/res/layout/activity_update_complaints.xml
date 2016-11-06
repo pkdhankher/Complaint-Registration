@@ -3,9 +3,18 @@
     android:id="@+id/content_update_complaints"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcf4c8"
-    android:padding="16dp">
+    android:background="#fcf4c8">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/header"/>
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:padding="16dp">
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
@@ -18,7 +27,8 @@
         android:layout_marginTop="33dp"
         android:text="Enter your Complain ID which you want to update :-"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/textView17"
@@ -30,7 +40,8 @@
         android:layout_marginTop="100dp"
         android:text="Enter ID :-"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#000"/>
 
     <EditText
         android:id="@+id/editText4"
@@ -50,12 +61,13 @@
         android:layout_below="@+id/editText4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="77dp"
-        android:background="#e59950"
         android:paddingBottom="10dp"
         android:paddingLeft="35dp"
         android:paddingRight="35dp"
         android:paddingTop="10dp"
         android:text="Update Status"
-        android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:background="@drawable/button_border"/>
+</RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

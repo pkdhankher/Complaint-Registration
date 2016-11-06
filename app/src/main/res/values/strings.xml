@@ -32,8 +32,17 @@
     <string name="title_activity_help">Help</string>
     <string name="title_activity_admin_login">AdminLogin</string>
     -<string name="large_text">
-    "This App deals with general problems faced by people like Seawage problems, Garbage, Dump, Damaged Roads etc"\n\n
-    <b>Step 1 : Take Picture</b>\n\n"Click on The Take Picture Button to capture image Of your problem."
+    "This App deals with general problems faced by people like Seawage problems, Garbage, Dump, Damaged Roads etc."\n\n
+    <b>Step 1 : Choose Picture</b>\n\n"Click on The Take Picture or Select Picture Button to choose image Of your problem."
+</string>
+    -<string name="step2">
+   \n<b>Step 2 : Fill Details</b>\n\n"After Choosing image you have to fill your Address and Complaint Details, after then you need to click on SUBMIT button to submit your Complaint."
+</string>
+    -<string name="step3">
+   \n<b>Step 3 : Check ur Complaint Status</b>\n\n"After Submitting your Complaint You can check your Complaint Status. Only you need to click on Login option and use your PhoneNo as your Complaint Id.(PhoneNo which is used during submitting your details)"
+</string>
+    -<string name="step4">
+   \n<b>Step 4 : Check ur City Complaints</b>\n\n"If you want to check any city Complaints simply you need to click on Select City button and Select Any City you want to check."
 </string>
     <string name="title_activity_ad_details">AdDetails</string>
     <string name="title_activity_show_details">ShowDetails</string>

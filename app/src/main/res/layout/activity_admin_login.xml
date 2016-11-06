@@ -4,9 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fcf4c8"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/header"/>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginTop="50dp">
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
@@ -41,8 +51,8 @@
         android:layout_margin="5dp"
         android:background="@drawable/et_rounded_corner"
         android:inputType="textPassword"
-        android:padding="10dp"
         android:textColor="#000"
+        android:padding="10dp"
         android:textSize="18sp" />
 
     <Button
@@ -52,13 +62,16 @@
         android:layout_below="@+id/textView8"
         android:layout_centerHorizontal="true"
         android:layout_gravity="right"
-        android:layout_margin="5dp"
-        android:layout_marginTop="66dp"
-        android:background="#e59950"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_border"
         android:gravity="center"
+        android:textSize="25dp"
         android:onClick="onclick"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="Login"
-        android:textColor="#fff" />
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Login" />
+</LinearLayout>
+</LinearLayout>
 </LinearLayout>

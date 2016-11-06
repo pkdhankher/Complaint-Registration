@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcf4c8"
-    android:padding="16dp">
+    android:background="#fcf4c8">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/header"/>
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -18,8 +27,7 @@
         android:text="Login"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#000"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -44,15 +52,14 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="12dp"
-        android:background="#e59950"
-        android:nestedScrollingEnabled="false"
+        android:background="@drawable/button_border"
         android:onClick="clickPic"
         android:paddingBottom="10dp"
         android:paddingLeft="45dp"
         android:paddingRight="45dp"
         android:paddingTop="10dp"
         android:text="Take Picture"
-        android:textColor="#ffffff"
+
         android:textSize="25dp" />
 
     <ImageButton
@@ -76,7 +83,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView3"
         android:layout_marginTop="25dp"
-        android:background="#e59950"
+        android:background="@drawable/button_border"
         android:contextClickable="true"
         android:dropDownWidth="match_parent"
         android:entries="@array/city_arrays"
@@ -84,7 +91,6 @@
         android:focusableInTouchMode="false"
         android:minHeight="50dp"
         android:spinnerMode="dropdown"
-        android:textAlignment="center"
         android:touchscreenBlocksFocus="true" />
 
     <TextView
@@ -110,7 +116,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/button"
         android:layout_marginTop="45dp"
-        android:background="#e59950"
+        android:background="@drawable/button_border"
         android:nestedScrollingEnabled="false"
         android:onClick="selectPic"
         android:paddingBottom="10dp"
@@ -118,6 +124,8 @@
         android:paddingRight="45dp"
         android:paddingTop="10dp"
         android:text="Select Picture"
-        android:textColor="#ffffff"
+
         android:textSize="25dp" />
+</RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

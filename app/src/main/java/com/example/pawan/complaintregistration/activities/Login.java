@@ -75,7 +75,7 @@ public class Login extends Activity {
 
 
     public void opnlogin (View view){
-        startActivity(new Intent(this, AdminLogin.class));
+        startActivity(new Intent(Login.this, AdminLogin.class));
     }
 }
 

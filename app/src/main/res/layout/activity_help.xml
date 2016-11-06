@@ -3,13 +3,19 @@
     android:id="@+id/content_help"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcf4c8"
-    android:padding="16dp">
+    android:background="#fcf4c8">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/header"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/main"
@@ -34,6 +40,40 @@
             android:text="@string/large_text"
             android:textColor="#222"
             android:textSize="18sp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/chooseimage"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#222"
+            android:textSize="18sp"
+            android:text="@string/step2"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/filldetails"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#222"
+            android:textSize="18sp"
+            android:text="@string/step3"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/checkstatus"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#222"
+            android:textSize="18sp"
+            android:text="@string/step4"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="@drawable/selectcity"/>
     </LinearLayout>
-
+</LinearLayout>
 </ScrollView>

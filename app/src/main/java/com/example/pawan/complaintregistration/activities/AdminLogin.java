@@ -3,13 +3,11 @@ package com.example.pawan.complaintregistration.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.pawan.complaintregistration.R;
-import com.example.pawan.complaintregistration.UpdateComplaints;
 
 public class AdminLogin extends Activity {
     EditText e1;
@@ -32,7 +30,7 @@ public class AdminLogin extends Activity {
 
         if (s1.equals("pawan") && (s2.equals("123"))) {
 
-            startActivity(new Intent(this, UpdateComplaints.class));
+            startActivity(new Intent(AdminLogin.this, UpdateComplaints.class));
 
             Toast.makeText(this, "Welcome to admin panel", Toast.LENGTH_LONG).show();
         } else {
