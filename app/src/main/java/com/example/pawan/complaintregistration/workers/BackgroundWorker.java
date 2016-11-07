@@ -44,8 +44,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
         if (type.equals("login"))
         {
-            String logurl = "http://10.0.2.2/pp1.php";
-            //String logurl="http://10.0.2.2/dashboard/cr/pp1.php"; //for my pc -Rahul
+         //   String logurl = "http://10.0.2.2/pp1.php";   //for localhost -pawan
+            String logurl = "http://pawan.esy.es/pp1.php";
 
             try {
                 String street = params[1];
@@ -98,8 +98,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         else if(type.equals("data")){
             try {
 
-                String logurl = "http://10.0.2.2/demo1.php";
-                //String logurl = "http://10.0.2.2/dashboard/cr/ret.php";  //for my pc -Rahul
+                String logurl = "http://pawan.esy.es/demo1.php";
+             //   String logurl = "http://10.0.2.2/demo1.php";   //for localhost -pawan
                 String phone = params[1];
                 URL url = new URL(logurl);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -143,7 +143,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
             try {
                 String spresult = params[1];
-                String cityurl = "http://10.0.2.2/getcity.php";
+                String cityurl = "http://pawan.esy.es/getcity.php";
+               // String cityurl = "http://10.0.2.2/getcity.php";  //for localhost -pawan
                 URL url = new URL(cityurl);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -186,7 +187,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
             try {
                 String id = params[1];
-                String idurl = "http://10.0.2.2/update.php";
+                String idurl = "http://pawan.esy.es/update.php";
+            //    String idurl = "http://10.0.2.2/update.php";  //for localhost -pawan
                 URL url = new URL(idurl);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");

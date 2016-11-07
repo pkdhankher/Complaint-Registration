@@ -25,11 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/thumbnail"
-            android:layout_marginLeft="12dp"
+           
             android:maxLines="3"
             android:padding="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="#444"
+            android:textColor="#0b0b0b"
+            android:background="#ffffff"
             android:textSize="18dp"
             android:textStyle="bold" />
 

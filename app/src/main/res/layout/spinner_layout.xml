@@ -7,5 +7,5 @@
     android:maxLines="1"
     android:gravity="center"
     android:singleLine="true"
-    android:textColor="#ffffff"
-    android:textSize="12sp" />
+    android:textColor="#131313"
+    android:textSize="25dp" />
